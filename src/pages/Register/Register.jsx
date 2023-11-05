@@ -17,7 +17,7 @@ const Register = () => {
                             <input type="password" placeholder="Password" className="px-4 py-2 rounded-md opacity-60 bg-black w-full md:w-96 text-white" />
                             <input type="text" placeholder="Your Photo URL" className="px-4 py-2 rounded-md opacity-60 bg-black w-full md:w-96 text-white" />
                             <p className="text-white px-1 opacity-70">Already Have An Account? <Link className="font-medium hover:text-green-400" to='/login'>Login Now!</Link></p>
-                            <input type="submit" value="Login" className="px-4 py-2 rounded-md opacity-80 bg-travego w-full md:w-96 text-white hover:bg-travego2 ease-in-out duration-300"/>
+                            <input type="submit" value="Register" className="px-4 py-2 rounded-md opacity-80 bg-travego w-full md:w-96 text-white hover:bg-travego2 ease-in-out duration-300"/>
                             
                         </form>
                         <button className="px-4 py-2 rounded-md opacity-80 bg-travego w-full md:w-96 text-white mt-1 flex justify-center items-center gap-1 hover:bg-travego2 ease-in-out duration-300"><FcGoogle className="text-xl"></FcGoogle>Login With Google</button>

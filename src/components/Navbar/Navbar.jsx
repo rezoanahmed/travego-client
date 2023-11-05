@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
     const links = <>
         <NavLink to='/' className="font-semibold text-gray-600 hover:text-travego sm:py-6 dark:text-blue-500">Home</NavLink>
-        <NavLink to='/' className="font-semibold text-gray-600 hover:text-travego sm:py-6 dark:text-blue-500">Services</NavLink>
+        <NavLink to='/services' className="font-semibold text-gray-600 hover:text-travego sm:py-6 dark:text-blue-500">Services</NavLink>
         <NavLink to='/' className="font-semibold text-gray-600 hover:text-travego sm:py-6 dark:text-blue-500">My Bookings</NavLink>
         <NavLink to='/about' className="font-semibold text-gray-600 hover:text-travego sm:py-6 dark:text-blue-500">About</NavLink>
         <NavLink to='/contact' className="font-semibold text-gray-600 hover:text-travego sm:py-6 dark:text-blue-500">Contact Us</NavLink>
