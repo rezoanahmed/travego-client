@@ -1,8 +1,41 @@
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import useAuth from "../../hooks/useAuth/useAuth";
 
 
 const Register = () => {
+    const {googleLogin, register} = useAuth();
+
+    const handleGoogleLogin = () =>{
+        googleLogin()
+        .then(user=>{
+            console.log(user);
+        })
+        .catch(err=>{
+            console.log(err);
+        })
+    }
+
+    const signUp = e =>{
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        const photo = form.photo.value;
+        const name = form.name.value;
+
+        register(email,password,name,photo)
+        .then(userCredentials=>{
+            console.log(userCredentials);
+            
+        })
+        .catch(err=>{
+            console.log(err);
+        })
+
+        
+    }
+    
     return (
         <div className="bg-[url('https://images.pexels.com/photos/761511/pexels-photo-761511.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] h-screen bg-cover">
             <div className="bg-black bg-opacity-70 h-screen">
@@ -11,16 +44,16 @@ const Register = () => {
                         <h1 className="text-6xl opacity-70 font-bold text-white">Register Today & Explore Our Exciting Packages.....</h1>
                     </div>
                     <div className="bg-white bg-opacity-10 p-4 rounded-md shadow-md max-w-[600px]">
-                        <form className="flex flex-col gap-2">
-                            <input type="text" placeholder="Your Full Name" className="px-4 py-2 rounded-md opacity-60 bg-black w-full md:w-96 text-white" />
-                            <input type="email" placeholder="E-mail Address" className="px-4 py-2 rounded-md opacity-60 bg-black w-full md:w-96 text-white" />
-                            <input type="password" placeholder="Password" className="px-4 py-2 rounded-md opacity-60 bg-black w-full md:w-96 text-white" />
-                            <input type="text" placeholder="Your Photo URL" className="px-4 py-2 rounded-md opacity-60 bg-black w-full md:w-96 text-white" />
+                        <form onSubmit={signUp} className="flex flex-col gap-2">
+                            <input name="name" type="text" placeholder="Your Full Name" className="px-4 py-2 rounded-md opacity-60 bg-black w-full md:w-96 text-white" />
+                            <input name="email" type="email" placeholder="E-mail Address" className="px-4 py-2 rounded-md opacity-60 bg-black w-full md:w-96 text-white" />
+                            <input name="password" type="password" placeholder="Password" className="px-4 py-2 rounded-md opacity-60 bg-black w-full md:w-96 text-white" />
+                            <input name="photo" type="text" placeholder="Your Photo URL" className="px-4 py-2 rounded-md opacity-60 bg-black w-full md:w-96 text-white" />
                             <p className="text-white px-1 opacity-70">Already Have An Account? <Link className="font-medium hover:text-green-400" to='/login'>Login Now!</Link></p>
                             <input type="submit" value="Register" className="px-4 py-2 rounded-md opacity-80 bg-travego w-full md:w-96 text-white hover:bg-travego2 ease-in-out duration-300"/>
                             
                         </form>
-                        <button className="px-4 py-2 rounded-md opacity-80 bg-travego w-full md:w-96 text-white mt-1 flex justify-center items-center gap-1 hover:bg-travego2 ease-in-out duration-300"><FcGoogle className="text-xl"></FcGoogle>Login With Google</button>
+                        <button onClick={handleGoogleLogin} className="px-4 py-2 rounded-md opacity-80 bg-travego w-full md:w-96 text-white mt-1 flex justify-center items-center gap-1 hover:bg-travego2 ease-in-out duration-300"><FcGoogle className="text-xl"></FcGoogle>Login With Google</button>
                     </div>
                 </div>
 

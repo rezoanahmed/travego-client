@@ -1,7 +1,18 @@
 import {FcGoogle} from "react-icons/fc"
 import { Link } from "react-router-dom";
+import useAuth from "../../hooks/useAuth/useAuth";
 
 const Login = () => {
+    const {googleLogin} = useAuth();
+    const handleGoogleLogin = () =>{
+        googleLogin()
+        .then(user=>{
+            console.log(user);
+        })
+        .catch(err=>{
+            console.log(err);
+        })
+    }
     return (
         <div className="bg-[url('https://images.pexels.com/photos/761511/pexels-photo-761511.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] h-screen bg-cover">
             <div className="bg-black bg-opacity-70 h-screen">
@@ -17,7 +28,7 @@ const Login = () => {
                             <input type="submit" value="Login" className="px-4 py-2 rounded-md opacity-80 bg-travego w-full md:w-96 text-white hover:bg-travego2 ease-in-out duration-300"/>
                             
                         </form>
-                        <button className="px-4 py-2 rounded-md opacity-80 bg-travego w-full md:w-96 text-white mt-1 flex justify-center items-center gap-1 hover:bg-travego2 ease-in-out duration-300"><FcGoogle className="text-xl"></FcGoogle>Continue With Google</button>
+                        <button onClick={handleGoogleLogin} className="px-4 py-2 rounded-md opacity-80 bg-travego w-full md:w-96 text-white mt-1 flex justify-center items-center gap-1 hover:bg-travego2 ease-in-out duration-300"><FcGoogle className="text-xl"></FcGoogle>Continue With Google</button>
                     </div>
                 </div>
 
