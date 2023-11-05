@@ -1,5 +1,6 @@
 import Hero from "../../components/Hero/Hero";
 import Why from "../../components/Why/Why";
+import Services from "../Services/Services";
 
 
 const Home = () => {
@@ -7,7 +8,8 @@ const Home = () => {
         <div>
             <Hero></Hero>
             <div className="p-4 md:p-8">
-            <Why></Why>
+                <Services></Services>
+                <Why></Why>
             </div>
         </div>
     );
