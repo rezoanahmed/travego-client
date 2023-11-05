@@ -1,7 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth/useAuth";
 import {FiLogOut} from "react-icons/fi"
-import Swal from "sweetalert2";
 
 const Navbar = () => {
 

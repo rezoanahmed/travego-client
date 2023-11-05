@@ -5,6 +5,8 @@ import Error from "../pages/Error/Error";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import AllServices from "../pages/Services/AllServices";
+import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
+import Services from "../pages/Services/Services";
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -25,7 +27,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/services",
-                element: <AllServices></AllServices>
+                element: <PrivateRoutes><Services></Services></PrivateRoutes>
             }
         ],
         
