@@ -2,6 +2,7 @@ import {BsTicketPerforatedFill,BsFillLightbulbFill, BsFillCalendarFill, BsFillSt
 const Why = () => {
     return (
         <div className="mt-10">
+            <h1 className="text-4xl font-medium mb-10 text-center">Why Booking With Trave<span className="text-travego2">Go</span>?</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
                 <div className="flex justify-center items-center flex-col gap-2">
                     <BsTicketPerforatedFill className="text-4xl"></BsTicketPerforatedFill>
