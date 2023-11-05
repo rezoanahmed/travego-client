@@ -10,6 +10,7 @@ const Login = () => {
         .then(userCredentials=>{
             // console.log(userCredentials);
             if(userCredentials){
+                
                 Swal.fire("", "Login Succeeded!!!", "success")
             }
         })
@@ -31,6 +32,7 @@ const Login = () => {
         .then(userCredentials=>{
             // console.log(userCredentials);
             if(userCredentials){
+                form.reset();
                 Swal.fire("", "Login Succeeded!!!", "success")
             }
         })

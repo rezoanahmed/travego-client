@@ -35,6 +35,7 @@ const Register = () => {
         .then(userCredentials=>{
             // console.log(userCredentials);
             if(userCredentials){
+                form.reset();
                 Swal.fire("", "Registration Succeeded!!!", "success")
             }
             
