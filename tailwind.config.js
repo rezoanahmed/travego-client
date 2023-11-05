@@ -6,7 +6,13 @@ export default {
     'node_modules/preline/dist/*.js',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        travego: "#135841",
+        travego2: "#1A4738",
+      }
+    },
+    
   },
   plugins: [require('preline/plugin'),],
   darkMode: "class"
