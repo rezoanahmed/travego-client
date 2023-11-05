@@ -3,11 +3,26 @@ import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth/useAuth";
 
 const Login = () => {
-    const {googleLogin} = useAuth();
+    const {googleLogin, login} = useAuth();
     const handleGoogleLogin = () =>{
         googleLogin()
         .then(user=>{
             console.log(user);
+        })
+        .catch(err=>{
+            console.log(err);
+        })
+    }
+
+    const handleLogin = e =>{
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        login(email,password)
+        .then(userCredentials=>{
+            console.log(userCredentials);
         })
         .catch(err=>{
             console.log(err);
@@ -21,9 +36,9 @@ const Login = () => {
                         <h1 className="text-6xl opacity-70 font-bold text-white hidden md:flex">Login Now & Book The Best Travel Guide For You.....</h1>
                     </div>
                     <div className="bg-white bg-opacity-10 p-4 rounded-md shadow-md max-w-[600px]">
-                        <form className="flex flex-col gap-2">
-                            <input type="email" placeholder="E-mail Address" className="px-4 py-2 rounded-md opacity-60 bg-black w-full md:w-96 text-white" />
-                            <input type="password" placeholder="Password" className="px-4 py-2 rounded-md opacity-60 bg-black w-full md:w-96 text-white" />
+                        <form onSubmit={handleLogin} className="flex flex-col gap-2">
+                            <input name="email" type="email" placeholder="E-mail Address" className="px-4 py-2 rounded-md opacity-60 bg-black w-full md:w-96 text-white" />
+                            <input name="password" type="password" placeholder="Password" className="px-4 py-2 rounded-md opacity-60 bg-black w-full md:w-96 text-white" />
                             <p className="text-white px-1 opacity-70">New User? <Link className="font-medium hover:text-green-400" to='/register'>Register Now!</Link></p>
                             <input type="submit" value="Login" className="px-4 py-2 rounded-md opacity-80 bg-travego w-full md:w-96 text-white hover:bg-travego2 ease-in-out duration-300"/>
                             
