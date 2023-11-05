@@ -1,6 +1,7 @@
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth/useAuth";
+import Swal from "sweetalert2";
 
 
 const Register = () => {
@@ -8,11 +9,17 @@ const Register = () => {
 
     const handleGoogleLogin = () =>{
         googleLogin()
-        .then(user=>{
-            console.log(user);
+        .then(userCredentials=>{
+            // console.log(userCredentials);
+            if(userCredentials){
+                Swal.fire("", "Login Succeeded!!!", "success")
+            }
         })
         .catch(err=>{
-            console.log(err);
+            // console.log(err);
+            if(err){
+                Swal.fire("", "Something went wrong!!!", "error")
+            }
         })
     }
 
@@ -26,11 +33,17 @@ const Register = () => {
 
         register(email,password,name,photo)
         .then(userCredentials=>{
-            console.log(userCredentials);
+            // console.log(userCredentials);
+            if(userCredentials){
+                Swal.fire("", "Registration Succeeded!!!", "success")
+            }
             
         })
         .catch(err=>{
-            console.log(err);
+            // console.log(err);
+            if(err){
+                Swal.fire("", "Something went wrong!!!", "error")
+            }
         })
 
         
