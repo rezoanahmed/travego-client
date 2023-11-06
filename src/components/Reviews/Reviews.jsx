@@ -13,11 +13,11 @@ const Reviews = () => {
     return (
         <div>
             <div className="mt-10">
-                <div className="text-center">
+                <div className="flex justify-center flex-col items-center">
                     <div>
-                        <h1 className="font-bold text-4xl">Serving Smiles, Creating Happiness!</h1>
+                        <h1 className="font-bold text-4xl text-center">Serving Smiles, Creating Happiness!</h1>
                     </div>
-                    <div className=" mt-10 grid grid-cols-1 md:grid-cols-4">
+                    <div className=" mt-10 grid grid-cols-1 md:grid-cols-4 justify-center gap-2">
                         {
                             reviews.map(review=><Review key={review._id} reviews={review}></Review>)
                         }
