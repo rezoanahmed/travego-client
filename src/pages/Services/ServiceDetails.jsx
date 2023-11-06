@@ -1,10 +1,10 @@
-import { useLoaderData, Link } from "react-router-dom"
+import { useLoaderData } from "react-router-dom"
 
 const ServiceDetails = () => {
     const { name, price, photo, location, description, username, userPhoto } = useLoaderData();
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 p-10 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 p-2 md:p-10 gap-5">
             <div>
                 <img src={photo} alt={photo} className="rounded-md" />
             </div>

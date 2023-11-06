@@ -18,6 +18,7 @@ const Add = () => {
 
         const service = {
             name, price, photo, location, description, username: user.displayName, userPhoto: user.photoURL,
+            email: user.email,
         };
         // console.log(service);
         axios.post("http://localhost:3000/services", service)

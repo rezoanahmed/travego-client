@@ -16,7 +16,7 @@ const Service = ({ service }) => {
                         <img src={userPhoto} alt="user photo" className="rounded-full h-8" />
                         <p className="text-lg font-medium text-gray-700">{username}</p>
                     </div>
-                    <p className="text-gray-600">{description.slice(0, 100)}...<Link className="text-travego font-bold">Read More</Link></p>
+                    <p className="text-gray-600">{description.slice(0, 100)}...<Link className="text-travego font-bold" to={`/service/${_id}`}>Read More</Link></p>
                 </div>
             </div>
         </div>
