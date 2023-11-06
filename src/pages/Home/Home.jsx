@@ -1,4 +1,5 @@
 import Destinations from "../../components/Destinations/Destinations";
+import Features from "../../components/Features/Features";
 import Hero from "../../components/Hero/Hero";
 import Reviews from "../../components/Reviews/Reviews";
 import Why from "../../components/Why/Why";
@@ -14,6 +15,7 @@ const Home = () => {
                 <Why></Why>
                 <Destinations></Destinations>
                 <Reviews></Reviews>
+                <Features></Features>
             </div>
         </div>
     );
