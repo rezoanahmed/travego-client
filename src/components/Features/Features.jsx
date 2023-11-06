@@ -4,7 +4,7 @@ import {VscFeedback} from "react-icons/vsc"
 const Features = () => {
     return (
         <div className="mt-20">
-            <div className="flex justify-center gap-10">
+            <div className="flex flex-col md:flex-row justify-center gap-10">
                 <div className="flex justify-center items-center flex-col gap-2">
                     <BiSupport className="text-6xl text-travego2"></BiSupport>
                     <h1 className="text-2xl font-bold">24/7 Customer Support</h1>
