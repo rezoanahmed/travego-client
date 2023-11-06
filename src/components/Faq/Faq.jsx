@@ -91,7 +91,8 @@ const Faq = () => {
                 </div>
             </div>
             <div className="max-w-[400px]">
-                <h1 className="text-4xl text-travego2 font-bold text-center">FAQ - Frequently Asked Questions</h1>
+                {/* <h1 className="text-4xl text-travego2 font-bold text-center">FAQ - Frequently Asked Questions</h1> */}
+                <img src="https://i.ibb.co/p2mf1Jt/TRAVEGO.gif" alt="" />
             </div>
         </div>
     );
