@@ -1,5 +1,6 @@
 import Destinations from "../../components/Destinations/Destinations";
 import Hero from "../../components/Hero/Hero";
+import Reviews from "../../components/Reviews/Reviews";
 import Why from "../../components/Why/Why";
 import Services from "../Services/Services";
 
@@ -12,6 +13,7 @@ const Home = () => {
                 <Services></Services>
                 <Why></Why>
                 <Destinations></Destinations>
+                <Reviews></Reviews>
             </div>
         </div>
     );

@@ -1,0 +1,31 @@
+import { useEffect } from "react";
+import { useState } from "react";
+import axios from "axios"
+import Review from "./Review";
+const Reviews = () => {
+    const [reviews, setReviews] = useState([]);
+    useEffect(() => {
+        axios.get("http://localhost:3000/reviews")
+            .then(response => {
+                setReviews(response.data);
+            })
+    }, [])
+    return (
+        <div>
+            <div className="mt-10">
+                <div className="text-center">
+                    <div>
+                        <h1 className="font-bold text-4xl">Serving Smiles, Creating Happiness!</h1>
+                    </div>
+                    <div className=" mt-10 grid grid-cols-1 md:grid-cols-4">
+                        {
+                            reviews.map(review=><Review key={review._id} reviews={review}></Review>)
+                        }
+                    </div>
+                </div>
+            </div>    
+        </div>
+    );
+};
+
+export default Reviews;
