@@ -1,5 +1,6 @@
 import Destinations from "../../components/Destinations/Destinations";
 import Devices from "../../components/Devices/Devices";
+import Faq from "../../components/Faq/Faq";
 import Features from "../../components/Features/Features";
 import Hero from "../../components/Hero/Hero";
 import Reviews from "../../components/Reviews/Reviews";
@@ -18,6 +19,7 @@ const Home = () => {
                 <Reviews></Reviews>
                 <Features></Features>
                 <Devices></Devices>
+                <Faq></Faq>
             </div>
         </div>
     );
