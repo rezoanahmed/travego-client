@@ -15,14 +15,14 @@ const Services = () => {
             setServices(response.data)
         })
     },[])
-    const fourServices = services.slice(0,4);
+    // const fourServices = services.slice(0,4);
     return (
         <div className="mt-10">
             {/* {services.length} */}
             <h1 className="font-medium text-center text-4xl">We're here to serve you with our exciting packages</h1>
             <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-2">
                 {
-                    fourServices.map(service=><Service key={service._id} service={service}></Service>)
+                    services.map(service=><Service key={service._id} service={service}></Service>)
                 }
             </div>
             <div className="flex justify-center mt-10">
