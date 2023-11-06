@@ -14,7 +14,7 @@ const Navbar = () => {
         <NavLink to='/services' className="font-semibold text-gray-600 hover:text-travego sm:py-6 dark:text-blue-500">Services</NavLink>
 
         <NavLink to='/about' className="font-semibold text-gray-600 hover:text-travego sm:py-6 dark:text-blue-500">About</NavLink>
-        <NavLink to='/contact' className="font-semibold text-gray-600 hover:text-travego sm:py-6 dark:text-blue-500">Contact Us</NavLink>
+        <NavLink to='/contact' className="font-semibold text-gray-600 hover:text-travego sm:py-6 dark:text-blue-500">Contact</NavLink>
 
     </>
 
@@ -72,7 +72,7 @@ const Navbar = () => {
                                                     <img className="inline-block flex-shrink-0 h-[3rem] w-[3rem] rounded-full" src={user.photoURL} />
                                                     <div className="ml-3">
                                                         <h3 className="font-semibold text-gray-800 dark:text-white">{user.displayName}</h3>
-                                                        <p className="text-sm font-medium text-gray-400">{user.email}</p>
+                                                        <p className="text-xs text-gray-400">{user.email}</p>
                                                     </div>
                                                 </div>
                                             </div>
