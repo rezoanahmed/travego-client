@@ -1,9 +1,12 @@
 import axios from "axios"
 import Swal from "sweetalert2";
 import useAuth from "../../hooks/useAuth/useAuth";
+import { useNavigate } from "react-router-dom";
 const Add = () => {
-    
+
+
     const {user} = useAuth();
+    const navigate = useNavigate();
     const handleAdd = e =>{
         e.preventDefault();
         const form = e.target;
@@ -24,6 +27,8 @@ const Add = () => {
                 // console.log(res.data.insertedId);
                 // console.log(res);
                 Swal.fire("","Service Added Successfully!!!", "success");
+                form.reset();
+                navigate("/");
 
             }
         })
