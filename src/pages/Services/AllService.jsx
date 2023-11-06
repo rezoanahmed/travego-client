@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 const AllService = ({ service }) => {
     const { _id, name, description, photo, price, userPhoto, username } = service;
 
+
     return (
         <div className="flex justify-center px-4 md:px-40">
             <div className="border flex flex-col  items-center md:flex-row rounded-md shadow-md hover:shadow-2xl duration-300 overflow-auto">
@@ -16,7 +17,7 @@ const AllService = ({ service }) => {
                         <img src={userPhoto} alt="user photo" className="rounded-full h-8" />
                         <p className="text-lg font-medium text-gray-700">{username}</p>
                     </div>
-                    <p className="text-gray-600">{description.slice(0, 100)}...<Link className="text-travego font-bold">Read More</Link></p>
+                    <p className="text-gray-600">{description.slice(0, 100)}...<Link className="text-travego font-bold" to={`/service/${_id}`}>Read More</Link></p>
                 </div>
             </div>
         </div>
