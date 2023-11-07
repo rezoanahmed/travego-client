@@ -43,6 +43,9 @@ export const router = createBrowserRouter([
             {
                 path: "/manage",
                 element: <PrivateRoutes><Manage></Manage></PrivateRoutes>
+            },
+            {
+                
             }
         ],
         
