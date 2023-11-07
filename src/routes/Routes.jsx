@@ -11,7 +11,8 @@ import ServiceDetails from "../pages/Services/ServiceDetails";
 import Manage from "../pages/Manage/Manage";
 import MyBookings from "../pages/MyBookings/MyBookings";
 import MySchedules from "../pages/MySchedules/MySchedules";
-import Update from "../pages/Update/Update";
+import UpdateServices from "../pages/Update/UpdateServices";
+import UpdateBookings from "../pages/Update/UpdateBookings";
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -56,9 +57,15 @@ export const router = createBrowserRouter([
                 element: <PrivateRoutes><MySchedules></MySchedules></PrivateRoutes>
             },
             {
-                path: "/update/:id",
-                element: <PrivateRoutes><Update></Update></PrivateRoutes>,
+                path: "/updateservice/:id",
+                element: <PrivateRoutes><UpdateServices></UpdateServices></PrivateRoutes>,
                 loader: ({params})=>fetch(`http://localhost:3000/service/${params.id}`)
+            },
+            {
+                path: "/updatebooking/:id",
+                element: <PrivateRoutes><UpdateBookings></UpdateBookings></PrivateRoutes>,
+                loader: ({params})=>fetch(`http://localhost:3000/booking/${params.id}`)
+                
             }
         ],
         

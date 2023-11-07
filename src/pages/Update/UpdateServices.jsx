@@ -1,8 +1,10 @@
 import axios from "axios";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
-const Update = () => {
+const UpdateServices = () => {
     const { _id, name, photo, price, location,description } = useLoaderData();
+    const navigate=useNavigate();
     const handleUpdate = e=>{
         e.preventDefault();
         const form = e.target;
@@ -19,6 +21,10 @@ const Update = () => {
         axios.patch(`http://localhost:3000/service/${_id}`, service)
         .then(res=>{
             console.log(res.data);
+            if(res.data.modifiedCount){
+                Swal.fire("", `${name} updated successfully`, "success");
+                navigate("/manage");
+            }
         })
     }
     return (
@@ -42,4 +48,4 @@ const Update = () => {
     );
 };
 
-export default Update;
+export default UpdateServices;

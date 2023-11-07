@@ -45,7 +45,7 @@ const MyServices = ({ service }) => {
                     </div>
                     <p className="text-lg">{location}</p>
                     <div className="flex gap-2">
-                        <Link to={`/update/${_id}`} className="text-green-700 font-medium hover:underline">Update</Link>
+                        <Link to={`/updateservice/${_id}`} className="text-green-700 font-medium hover:underline">Update</Link>
                         <Link onClick={() => handleDelete(name, _id)} className="text-red-700 font-medium hover:underline">Delete</Link>
                     </div>
                 </div>
