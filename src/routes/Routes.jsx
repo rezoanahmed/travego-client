@@ -10,6 +10,7 @@ import Add from "../pages/Add/Add";
 import ServiceDetails from "../pages/Services/ServiceDetails";
 import Manage from "../pages/Manage/Manage";
 import MyBookings from "../pages/MyBookings/MyBookings";
+import MySchedules from "../pages/MySchedules/MySchedules";
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -48,6 +49,10 @@ export const router = createBrowserRouter([
             {
                 path: "/mybookings",
                 element: <PrivateRoutes><MyBookings></MyBookings></PrivateRoutes>
+            },
+            {
+                path: "/myschedules",
+                element: <PrivateRoutes><MySchedules></MySchedules></PrivateRoutes>
             }
         ],
         

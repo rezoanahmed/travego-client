@@ -16,6 +16,9 @@ const MyBookings = () => {
    
     return (
         <div>
+            <div>
+                <h1 className="mt-10 text-center text-4xl font-medium">You Have {bookings.length} Booking(s)</h1>
+            </div>
             <div className="p-4 md:p-20 flex flex-col gap-10">
                 {bookings.map(booking=><MyBooking key={booking._id} booking={booking}></MyBooking>)}
             </div>

@@ -32,6 +32,7 @@ const MyServices = ({ service }) => {
     }
     return (
         <div className="">
+            
             <div className="grid md:grid-cols-6 gap-2 items-center shadow-lg">
                 <div className="">
                     <img src={photo} alt={photo} className="rounded-md" />

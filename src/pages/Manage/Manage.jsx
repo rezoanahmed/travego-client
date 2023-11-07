@@ -14,6 +14,9 @@ const Manage = () => {
     
     return (
         <div>
+            <div>
+                <h1 className="mt-10 text-center text-4xl font-medium">You Have {services.length} Service(s)</h1>
+            </div>
             <div className='p-4 md:p-20 flex flex-col gap-10'>
                 {services.map(service=><MyServices key={service._id} service={service}></MyServices>)}
             </div>
