@@ -1,8 +1,37 @@
+import axios from "axios";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
-const MyBooking = ({booking}) => {
-    const {_id, name, price, hostName, hostEmail, location, photo, date, usermail, instructions, userPhoto} = booking;
+const MyBooking = ({ booking }) => {
+    const { _id, name, price, hostName, hostEmail, location, photo, date, usermail, instructions, userPhoto } = booking;
+
+    // cancel function
+    const handleCancel = (name, id) => {
+        Swal.fire({
+            title: "Confirm the cancellation of",
+            text: `${name}`,
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, Confirm"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axios.delete(`http://localhost:3000/bookings/${id}`, id)
+                    .then(res => {
+                        if (res.data.deletedCount) {
+                            Swal.fire({
+                                title: "",
+                                text: `Cancelled! ${name}`,
+                                icon: "success"
+                            });
+                        }
+                    })
+
+            }
+        });
+    }
     return (
         <div className="">
             <div className="grid md:grid-cols-6 gap-2 items-center shadow-lg">
@@ -18,7 +47,7 @@ const MyBooking = ({booking}) => {
                     <p className="text-lg">{date}</p>
                     <div className="flex gap-2">
                         <Link className="text-green-700 font-medium hover:underline">Update</Link>
-                        <Link className="text-red-700 font-medium hover:underline">Cancel</Link>
+                        <Link onClick={()=>handleCancel(name, _id)} className="text-red-700 font-medium hover:underline">Cancel</Link>
                     </div>
                 </div>
             </div>

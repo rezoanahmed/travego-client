@@ -35,7 +35,7 @@ const ServiceDetails = () => {
         // console.log(bookingDetails);
         axios.post("http://localhost:3000/bookings", bookingDetails)
         .then(res=>{
-            console.log(res.data);
+            // console.log(res.data);
             if(res.data.insertedId){
                 Swal.fire("","Your Booking Has Been Confirmed", "success");
                 form.reset();
