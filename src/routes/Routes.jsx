@@ -8,6 +8,7 @@ import AllServices from "../pages/Services/AllServices";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 import Add from "../pages/Add/Add";
 import ServiceDetails from "../pages/Services/ServiceDetails";
+import Manage from "../pages/Manage/Manage";
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -38,6 +39,10 @@ export const router = createBrowserRouter([
             {
                 path: "/add",
                 element: <PrivateRoutes><Add></Add></PrivateRoutes>
+            },
+            {
+                path: "/manage",
+                element: <PrivateRoutes><Manage></Manage></PrivateRoutes>
             }
         ],
         

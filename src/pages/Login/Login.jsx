@@ -8,7 +8,7 @@ const Login = () => {
     const handleGoogleLogin = () =>{
         googleLogin()
         .then(userCredentials=>{
-            // console.log(userCredentials);
+            console.log(userCredentials);
             if(userCredentials){
                 
                 Swal.fire("", "Login Succeeded!!!", "success")
