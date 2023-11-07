@@ -14,9 +14,9 @@ const Hero = () => {
                             1500,
                             'Travego | Explore Locally, Travel Globally',
                             1500,
-                            'Travego | Uncover Hidden Gems Locally',
-                            1500,
                             'Travego | Your Local Journey Begins Here',
+                            1500,
+                            'Travego | Uncover Hidden Gems Locally',
                             1500,
                         ]}
                         speed={50}

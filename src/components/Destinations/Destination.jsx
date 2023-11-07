@@ -1,4 +1,4 @@
-
+import PropTypes from "prop-types"
 
 const Destination = ({ destination }) => {
     const { name, city, country, image } = destination;
@@ -13,5 +13,9 @@ const Destination = ({ destination }) => {
         </div>
     );
 };
+
+Destination.propTypes = {
+    destination: PropTypes.object.isRequired,
+}
 
 export default Destination;

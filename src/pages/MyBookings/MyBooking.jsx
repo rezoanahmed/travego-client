@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-
+import PropTypes from "prop-types"
 
 const MyBooking = ({ booking }) => {
     const { _id, name, price, hostName, hostEmail, location, photo, date, usermail, instructions, userPhoto } = booking;
@@ -57,5 +57,9 @@ const MyBooking = ({ booking }) => {
         // </div>
     );
 };
+
+MyBooking.propTypes={
+    booking: PropTypes.object.isRequired,
+}
 
 export default MyBooking;

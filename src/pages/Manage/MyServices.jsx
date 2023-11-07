@@ -1,6 +1,7 @@
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import PropTypes from "prop-types"
 
 const MyServices = ({ service }) => {
     const { _id, name, photo, price, location } = service;
@@ -52,5 +53,9 @@ const MyServices = ({ service }) => {
         </div>
     );
 };
+
+MyServices.propTypes={
+    service: PropTypes.object.isRequired,
+}
 
 export default MyServices;

@@ -1,6 +1,6 @@
 import axios from "axios";
 import useAuth from "../../hooks/useAuth/useAuth";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import MyBooking from "./MyBooking";
 
 

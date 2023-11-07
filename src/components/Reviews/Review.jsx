@@ -1,4 +1,4 @@
-
+import PropTypes from "prop-types"
 
 const Review = ({reviews}) => {
     const {name, review, image} = reviews;
@@ -10,5 +10,9 @@ const Review = ({reviews}) => {
         </div>
     );
 };
+
+Review.propTypes = {
+    reviews: PropTypes.object.isRequired,
+}
 
 export default Review;

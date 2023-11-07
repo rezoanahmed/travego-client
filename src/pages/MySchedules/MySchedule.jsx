@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types"
 
 const MySchedule = ({schedule}) => {
     const {_id, name, price, hostName, hostEmail, location, photo, date, usermail, instructions, userPhoto} = schedule;
@@ -27,5 +28,9 @@ const MySchedule = ({schedule}) => {
         // </div>
     );
 };
+
+MySchedule.propTypes={
+    schedule: PropTypes.object.isRequired
+}
 
 export default MySchedule;

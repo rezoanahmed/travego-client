@@ -39,7 +39,7 @@ const ServiceDetails = () => {
             if(res.data.insertedId){
                 Swal.fire("","Your Booking Has Been Confirmed", "success");
                 form.reset();
-                navigate("/");
+                navigate("/mybookings");
 
             }
         })
@@ -100,7 +100,7 @@ const ServiceDetails = () => {
 
                     <div className="flex flex-col">
                     <label className="text-xs text-gray-500 mb-1">Date</label>
-                    <input type="date" name="date" className="border border-travego2 p-2 rounded-md shadow-md" />
+                    <input type="date" name="date" className="border border-travego2 p-2 rounded-md shadow-md" required />
                     </div>
 
                     <div className="flex flex-col">
