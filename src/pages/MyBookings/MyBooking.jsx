@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import PropTypes from "prop-types"
 
 const MyBooking = ({ booking }) => {
-    const { _id, name, price, hostName, hostEmail, location, photo, date, usermail, instructions, userPhoto } = booking;
+    const { _id, name, price, hostName, hostEmail, location, photo, date, usermail, instructions, userPhoto, status } = booking;
 
     // cancel function
     const handleCancel = (name, id) => {
@@ -35,16 +35,18 @@ const MyBooking = ({ booking }) => {
     return (
         <div className="">
             <div className="grid md:grid-cols-6 gap-2 items-center shadow-lg">
-                <div className="">
+                <div className="col-span-2">
                     <img src={photo} alt={photo} className="rounded-md" />
                 </div>
-                <div className="md:col-span-5 space-y-2 p-4">
+                <div className="md:col-span-4 space-y-2 p-4">
                     <div className="flex justify-between">
                         <p className="text-2xl font-bold">{name}</p>
                         <p className="text-2xl font-medium text-travego2">{price}</p>
                     </div>
                     <p className="text-lg">{location}</p>
                     <p className="text-lg">{date}</p>
+                    <p className="text-lg">{instructions}</p>
+                    <p className="bg-travego p-2 text-white text-center">Status: {status}</p>
                     <div className="flex gap-2">
                         <Link to={`/updatebooking/${_id}`} className="text-green-700 font-medium hover:underline">Update</Link>
                         <Link onClick={()=>handleCancel(name, _id)} className="text-red-700 font-medium hover:underline">Cancel</Link>

@@ -1,8 +1,36 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PropTypes from "prop-types"
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const MySchedule = ({schedule}) => {
     const {_id, name, price, hostName, hostEmail, location, photo, date, usermail, instructions, userPhoto} = schedule;
+
+    const navigate = useNavigate();
+
+    const handleConfirm = () =>{
+        const status = "Confirmed";
+        axios.patch(`http://localhost:3000/schedules/${_id}`, {status})
+        .then(response=>{
+            console.log(response.data);
+            Swal.fire("","Schedule Has Been Confirmed", "success")
+            navigate("/")
+        })
+
+    }
+
+    const handleCancel = () =>{
+        const status = "Cancelled";
+        axios.patch(`http://localhost:3000/schedules/${_id}`, {status})
+        .then(response=>{
+            console.log(response.data);
+            Swal.fire("","Schedule Has Been Cancelled", "error")
+            navigate("/")
+        })
+
+    }
+
+
     return (
         <div className="">
             <div className="grid md:grid-cols-6 gap-2 items-center shadow-lg">
@@ -16,9 +44,11 @@ const MySchedule = ({schedule}) => {
                     </div>
                     <p className="text-lg">{location}</p>
                     <p className="text-lg">{date}</p>
+                    <p className="text-lg">{instructions}</p>
+                    <p className="text-lg">{usermail}</p>
                     <div className="flex gap-2">
-                        <Link className="text-green-700 font-medium hover:underline">Confirm</Link>
-                        <Link className="text-red-700 font-medium hover:underline">Cancel</Link>
+                        <button onClick={handleConfirm} className="text-green-700 font-medium hover:underline">Confirm</button>
+                        <button onClick={handleCancel} className="text-red-700 font-medium hover:underline">Cancel</button>
                     </div>
                 </div>
             </div>

@@ -1,11 +1,36 @@
-import { useLoaderData } from "react-router-dom";
+import axios from "axios";
+import { useLoaderData, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const UpdateBookings = () => {
     const {_id, name, price, hostName, hostEmail, location, photo, date, usermail, instructions} = useLoaderData();
+    const navigate = useNavigate();
+
+    // update handler function
+    const handleUpdate = (e) =>{
+        e.preventDefault();
+        const form = e.target;
+        const date = form.date.value;
+        const instructions = form.instructions.value;
+        const updateRequest = {
+            date, instructions
+        }
+        // console.log(updateRequest);
+        axios.patch(`http://localhost:3000/booking/${_id}`, updateRequest)
+        .then(res=>{
+            // console.log(res.data);
+            if(res.data.modifiedCount){
+                Swal.fire("", `${name} updated successfully`, "success");
+                navigate("/mybookings");
+            }
+        })
+    }
+
     return (
         <div>
             <div className="mt-10 z-100 p-5 bg-white dark:bg-black rounded-md shadow-2xl bg-opacity-95 md:mx-[400px] col-span-2">
-                <form className="flex flex-col md:grid md:grid-cols-2 gap-5 max-w-[500px] mx-auto py-2">
+                <h1 className="text-center font-bold text-lg">Update Booking Information For {name}</h1>
+                <form onSubmit={handleUpdate} className="flex flex-col md:grid md:grid-cols-2 gap-5 max-w-[500px] mx-auto py-2">
                     <div className="flex flex-col">
                         <label className="text-xs text-gray-500 mb-1">Service</label>
                         <input defaultValue={name}  disabled name="name" className="border border-travego2 p-2 rounded-md shadow-md" type="text" placeholder="Service Name" />
