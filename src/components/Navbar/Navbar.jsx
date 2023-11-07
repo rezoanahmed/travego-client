@@ -19,7 +19,7 @@ const Navbar = () => {
     </>
 
     const dashboard = <div className="flex flex-col">
-        <NavLink to='/' className="font-semibold text-gray-600 hover:text-travego p-2 dark:text-blue-500">My Bookings</NavLink>
+        <NavLink to='/mybookings' className="font-semibold text-gray-600 hover:text-travego p-2 dark:text-blue-500">My Bookings</NavLink>
         <NavLink to='/add' className="font-semibold text-gray-600 hover:text-travego p-2 dark:text-blue-500">Add Service</NavLink>
         <NavLink to='/manage' className="font-semibold text-gray-600 hover:text-travego p-2 dark:text-blue-500">Manage Services</NavLink>
     </div>

@@ -9,6 +9,7 @@ import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 import Add from "../pages/Add/Add";
 import ServiceDetails from "../pages/Services/ServiceDetails";
 import Manage from "../pages/Manage/Manage";
+import MyBookings from "../pages/MyBookings/MyBookings";
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -45,7 +46,8 @@ export const router = createBrowserRouter([
                 element: <PrivateRoutes><Manage></Manage></PrivateRoutes>
             },
             {
-                
+                path: "/mybookings",
+                element: <PrivateRoutes><MyBookings></MyBookings></PrivateRoutes>
             }
         ],
         

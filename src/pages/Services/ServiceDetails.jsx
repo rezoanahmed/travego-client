@@ -1,5 +1,7 @@
-import { useLoaderData } from "react-router-dom"
+import { useLoaderData, useNavigate } from "react-router-dom"
 import useAuth from "../../hooks/useAuth/useAuth";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const ServiceDetails = () => {
     const { user } = useAuth();
@@ -13,6 +15,7 @@ const ServiceDetails = () => {
         const modal = document.getElementById("modal");
         modal.classList.add('hidden')
     }
+    const navigate =  useNavigate();
 
     // booking handler
     const handleBooking = e =>{
@@ -29,7 +32,17 @@ const ServiceDetails = () => {
         const instructions = form.instructions.value;
 
         const bookingDetails = {name, price, hostName, hostEmail, location, photo, date, usermail, instructions, userPhoto: user.photoURL};
-        console.log(bookingDetails);
+        // console.log(bookingDetails);
+        axios.post("http://localhost:3000/bookings", bookingDetails)
+        .then(res=>{
+            console.log(res.data);
+            if(res.data.insertedId){
+                Swal.fire("","Your Booking Has Been Confirmed", "success");
+                form.reset();
+                navigate("/");
+
+            }
+        })
     }
 
     return (
