@@ -54,9 +54,6 @@ const MyBooking = ({ booking }) => {
                 </div>
             </div>
         </div>
-        // <div>
-        //     <p>{name}</p>
-        // </div>
     );
 };
 
