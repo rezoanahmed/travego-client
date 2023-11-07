@@ -30,8 +30,9 @@ const ServiceDetails = () => {
         const date = form.date.value;
         const usermail = form.usermail.value;
         const instructions = form.instructions.value;
+        const status = "Pending";
 
-        const bookingDetails = {name, price, hostName, hostEmail, location, photo, date, usermail, instructions, userPhoto: user.photoURL};
+        const bookingDetails = {name, price, hostName, hostEmail, location, photo, date, usermail, instructions, userPhoto: user.photoURL, status};
         // console.log(bookingDetails);
         axios.post("http://localhost:3000/bookings", bookingDetails)
         .then(res=>{
