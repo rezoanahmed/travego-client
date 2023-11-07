@@ -36,7 +36,7 @@ const MyServices = ({ service }) => {
                 <div className="">
                     <img src={photo} alt={photo} className="rounded-md" />
                 </div>
-                <div className="col-span-5 space-y-2 p-4">
+                <div className="md:col-span-5 space-y-2 p-4">
                     <div className="flex justify-between">
                         <p className="text-2xl font-bold">{name}</p>
                         <p className="text-2xl font-medium text-travego2">${price}</p>

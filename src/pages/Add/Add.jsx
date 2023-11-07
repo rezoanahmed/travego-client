@@ -29,7 +29,7 @@ const Add = () => {
                 // console.log(res);
                 Swal.fire("","Service Added Successfully!!!", "success");
                 form.reset();
-                navigate("/services");
+                navigate("/manage");
 
             }
         })
