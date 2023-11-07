@@ -4,6 +4,7 @@ import useAuth from "../../hooks/useAuth/useAuth";
 const ServiceDetails = () => {
     const { user } = useAuth();
     const { name, price, photo, location, description, username, userPhoto, email } = useLoaderData();
+    // modal functions
     const showModal = () => {
         const modal = document.getElementById("modal");
         modal.classList.remove('hidden')
@@ -11,6 +12,24 @@ const ServiceDetails = () => {
     const hideModal = () => {
         const modal = document.getElementById("modal");
         modal.classList.add('hidden')
+    }
+
+    // booking handler
+    const handleBooking = e =>{
+        e.preventDefault();
+        const form = e.target;
+        const name = form.name.value;
+        const price = form.price.value;
+        const hostName = form.hostName.value;
+        const hostEmail = form.hostEmail.value;
+        const location = form.location.value;
+        const photo = form.photo.value;
+        const date = form.date.value;
+        const usermail = form.usermail.value;
+        const instructions = form.instructions.value;
+
+        const bookingDetails = {name, price, hostName, hostEmail, location, photo, date, usermail, instructions, userPhoto: user.photoURL};
+        console.log(bookingDetails);
     }
 
     return (
@@ -35,7 +54,7 @@ const ServiceDetails = () => {
 
             {/* modal */}
             <div id="modal" className="hidden z-100 p-20 bg-white dark:bg-black rounded-md shadow-2xl bg-opacity-95 -mt-[750px] md:-mt-[570px] md:mx-[400px] col-span-2">
-                <form className="flex flex-col md:grid md:grid-cols-2 gap-5 max-w-[500px] mx-auto py-2">
+                <form onSubmit={handleBooking} className="flex flex-col md:grid md:grid-cols-2 gap-5 max-w-[500px] mx-auto py-2">
                     <div className="flex flex-col">
                         <label className="text-xs text-gray-500 mb-1">Service</label>
                         <input defaultValue={name} disabled name="name" className="border border-travego2 p-2 rounded-md shadow-md" type="text" placeholder="Service Name" />
@@ -48,12 +67,12 @@ const ServiceDetails = () => {
 
                     <div className="flex flex-col">
                         <label className="text-xs text-gray-500 mb-1">Host Name</label>
-                        <input defaultValue={username} disabled name="price" className="border border-travego2 p-2 rounded-md shadow-md" type="text" placeholder="Price" />
+                        <input defaultValue={username} disabled name="hostName" className="border border-travego2 p-2 rounded-md shadow-md" type="text" placeholder="Price" />
                     </div>
 
                     <div className="flex flex-col">
                     <label className="text-xs text-gray-500 mb-1">Host Email</label>
-                    <input defaultValue={email} disabled name="price" className="border border-travego2 p-2 rounded-md shadow-md" type="text" placeholder="Price" />
+                    <input defaultValue={email} disabled name="hostEmail" className="border border-travego2 p-2 rounded-md shadow-md" type="text" placeholder="Price" />
                     </div>
 
                     <div className="flex flex-col">
