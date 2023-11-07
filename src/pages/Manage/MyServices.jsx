@@ -1,11 +1,40 @@
+import axios from "axios";
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const MyServices = ({ service }) => {
-    const { name, photo, price, location } = service
+    const { _id, name, photo, price, location } = service;
+
+    const handleDelete = (name, id) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: `Really want to delete ${name}`,
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axios.delete(`http://localhost:3000/myservices/${id}`, id)
+                    .then(res => {
+                        if (res.data.deletedCount) {
+                            Swal.fire({
+                                title: "",
+                                text: `Deleted! ${name}`,
+                                icon: "success"
+                            });
+                        }
+                    })
+
+            }
+        });
+    }
     return (
         <div className="">
             <div className="grid md:grid-cols-6 gap-2 items-center shadow-lg">
                 <div className="">
-                    <img src={photo} alt={photo} className="rounded-md"/>
+                    <img src={photo} alt={photo} className="rounded-md" />
                 </div>
                 <div className="col-span-5 space-y-2 p-4">
                     <div className="flex justify-between">
@@ -14,8 +43,8 @@ const MyServices = ({ service }) => {
                     </div>
                     <p className="text-lg">{location}</p>
                     <div className="flex gap-2">
-                        <p className="text-green-700">Update</p>
-                        <p className="text-red-700">Delete</p>
+                        <Link className="text-green-700 font-medium hover:underline">Update</Link>
+                        <Link onClick={() => handleDelete(name, _id)} className="text-red-700 font-medium hover:underline">Delete</Link>
                     </div>
                 </div>
             </div>
