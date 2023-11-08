@@ -46,7 +46,7 @@ const MySchedule = ({schedule}) => {
                     <p className="text-lg">{date}</p>
                     <p className="text-lg">{instructions}</p>
                     <p className="text-lg">{usermail}</p>
-                    <p className={`text-white p-2 rounded-md w-[10%] text-center text-sm ${status=="Confirmed"?"bg-green-600":""} ${status=="Cancelled"?"bg-red-600":""} ${status=="Pending"?"bg-yellow-600":""}`}>{status}</p>
+                    <p className={`text-white p-2 rounded-md w-full lg:w-[10%] text-center text-sm ${status=="Confirmed"?"bg-green-600":""} ${status=="Cancelled"?"bg-red-600":""} ${status=="Pending"?"bg-yellow-600":""}`}>{status}</p>
                     <div className={`${status=="Pending"?"flex gap-2":"hidden"}`}>
                         <button onClick={handleConfirm} className="text-green-700 font-medium hover:underline">Confirm</button>
                         <button onClick={handleCancel} className="text-red-700 font-medium hover:underline">Cancel</button>

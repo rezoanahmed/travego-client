@@ -46,7 +46,7 @@ const MyBooking = ({ booking }) => {
                     <p className="text-lg">{location}</p>
                     <p className="text-lg">{date}</p>
                     <p className="text-lg">{instructions}</p>
-                    <p className={`rounded-md text-sm p-2 text-white text-center w-[10%] ${status=="Cancelled"? "bg-red-600":""}${status=="Confirmed"?"bg-green-600":""}${status=="Pending"?"bg-yellow-600":""}`}>{status}</p>
+                    <p className={`rounded-md text-sm p-2 text-white text-center w-full lg:w-[10%] ${status=="Cancelled"? "bg-red-600":""}${status=="Confirmed"?"bg-green-600":""}${status=="Pending"?"bg-yellow-600":""}`}>{status}</p>
                     <div className={`flex gap-2 ${status=="Confirmed"?"hidden":""} ${status=="Cancelled"?"hidden":""}`}>
                         <Link to={`/updatebooking/${_id}`} className="text-green-700 font-medium hover:underline">Update</Link>
                         <Link onClick={()=>handleCancel(name, _id)} className="text-red-700 font-medium hover:underline">Cancel</Link>
