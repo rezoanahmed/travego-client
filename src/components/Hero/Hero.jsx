@@ -26,7 +26,13 @@ const Hero = () => {
                             repeat={Infinity}
                         />
                     </div>
-                    <Link to='/login' className="bg-travego dark:dark:bg-[#1f2937] dark:text-[#949ea9] py-1 px-2 rounded-md hover:bg-travego2 duration-300 ease-in-out">Book Your Journey Now</Link>
+                    {/* <Link to='/login' className="bg-travego dark:dark:bg-[#1f2937] dark:text-[#949ea9] py-1 px-2 rounded-md hover:bg-travego2 duration-300 ease-in-out">Book Your Journey Now</Link> */}
+                    <div className="flex flex-col md:flex-row">
+                        <form>
+                            <input type="text" placeholder="Search Services" className="p-2 text-black bg-white dark:bg-black dark:text-white bg-opacity-40" />
+                            <button className="bg-travego p-2">Search</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
