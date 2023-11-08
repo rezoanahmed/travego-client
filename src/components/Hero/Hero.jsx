@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
 
 const Hero = () => {
@@ -25,7 +26,7 @@ const Hero = () => {
                             repeat={Infinity}
                         />
                     </div>
-                    <button className="bg-travego py-1 px-2 rounded-md hover:bg-travego2 duration-300 ease-in-out">Book Your Journey Now</button>
+                    <Link to='/login' className="bg-travego dark:dark:bg-[#1f2937] dark:text-[#949ea9] py-1 px-2 rounded-md hover:bg-travego2 duration-300 ease-in-out">Book Your Journey Now</Link>
                 </div>
             </div>
         </div>
