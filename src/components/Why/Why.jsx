@@ -23,7 +23,7 @@ const Why = () => {
                 <div className="flex justify-center items-center flex-col gap-2">
                     <BsFillStarFill className="text-6xl text-travego2"></BsFillStarFill>
                     <h1 className="font-medium text-2xl">Trusted reviews</h1>
-                    <p className="text-sm">4.5 stars from 140,000 Trustpilot reviews.</p>
+                    <p className="text-sm">4.5 stars from 140,000+ Trustpilot reviews.</p>
                 </div>
             </div>
         </div>

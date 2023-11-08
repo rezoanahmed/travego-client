@@ -1,6 +1,9 @@
-import { Link } from "react-router-dom";
+
 import Navbar from "../../components/Navbar/Navbar"
 import Footer from "../../components/Footer/Footer"
+import { Link } from "react-router-dom";
+// import Lottie from "lottie-react";
+// import ErrorAnimation from '../../Lottie/ErrorAnimation.json'
 
 const Error = () => {
     return (
@@ -11,6 +14,10 @@ const Error = () => {
                     <Link to='/' className="bg-white bg-opacity-50 p-2 rounded-md text-black hover:bg-gray-400 hover:bg-opacity-50">Go Back To Homepage</Link>
                 </div>
             </div>
+            {/* <div className="h-screen">
+                <Lottie animationData={ErrorAnimation} loop={true}></Lottie>
+                
+            </div> */}
             <Footer></Footer>
         </>
     );
