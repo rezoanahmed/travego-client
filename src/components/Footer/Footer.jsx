@@ -8,7 +8,7 @@ const Footer = () => {
         <NavLink to='/contact' className="font-semibold text-gray-600 hover:text-travego sm:py-6 dark:text-blue-500">Contact Us</NavLink>
     </div>
     return (
-        <div>
+        <div className="dark:bg-[#1f2937] dark:text-[#949ea9]">
             <footer className="mt-auto w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
                 {/* <!-- Grid --> */}
                 <div className="text-center">

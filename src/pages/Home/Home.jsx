@@ -10,7 +10,7 @@ import Services from "../Services/Services";
 
 const Home = () => {
     return (
-        <div>
+        <div className="dark:bg-[#1f2937] dark:text-[#949ea9]">
             <Hero></Hero>
             <div className="p-4 md:p-8 mx-auto">
                 <Services></Services>
