@@ -1,11 +1,13 @@
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth/useAuth";
 import Swal from "sweetalert2";
+import { useState } from "react";
 
 
 const Register = () => {
     const {googleLogin, register} = useAuth();
+    const navigate = useNavigate();
 
     const handleGoogleLogin = () =>{
         googleLogin()
@@ -18,10 +20,33 @@ const Register = () => {
         .catch(err=>{
             // console.log(err);
             if(err){
-                Swal.fire("", "Something went wrong!!!", "error")
+                Swal.fire("", "Something went wrong!!!", "error");
+                navigate("/");
             }
         })
     }
+
+    // password validation
+    const [passwordError, setPasswordError] = useState('');
+    const validatePassword = (password) => {
+        const minLength = 6;
+        const hasUppercase = /[A-Z]/.test(password);
+        const hasSpecialCharacter = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/.test(password);
+
+        if (password.length < minLength) {
+            return "Password should be at least 6 characters long.";
+        }
+
+        if (!hasUppercase) {
+            return "Password should contain at least one uppercase letter.";
+        }
+
+        if (!hasSpecialCharacter) {
+            return "Password should contain at least one special character.";
+        }
+
+        return null;
+    };
 
     const signUp = e =>{
         e.preventDefault();
@@ -31,12 +56,20 @@ const Register = () => {
         const photo = form.photo.value;
         const name = form.name.value;
 
+         // password validation
+         const error = validatePassword(password);
+         if (error) {
+             setPasswordError(error);
+             return;
+         }
+
         register(email,password,name,photo)
         .then(userCredentials=>{
             // console.log(userCredentials);
             if(userCredentials){
                 form.reset();
-                Swal.fire("", "Registration Succeeded!!!", "success")
+                Swal.fire("", "Registration Succeeded!!!", "success");
+                navigate("/login");
             }
             
         })
@@ -62,6 +95,7 @@ const Register = () => {
                             <input name="name" type="text" placeholder="Your Full Name" className="px-4 py-2 rounded-md opacity-60 bg-black w-full md:w-96 text-white" />
                             <input name="email" type="email" placeholder="E-mail Address" className="px-4 py-2 rounded-md opacity-60 bg-black w-full md:w-96 text-white" />
                             <input name="password" type="password" placeholder="Password" className="px-4 py-2 rounded-md opacity-60 bg-black w-full md:w-96 text-white" />
+                            {passwordError && <p className="text-red-400 text-sm mt-1">{passwordError}</p>}
                             <input name="photo" type="text" placeholder="Your Photo URL" className="px-4 py-2 rounded-md opacity-60 bg-black w-full md:w-96 text-white" />
                             <p className="text-white px-1 opacity-70">Already Have An Account? <Link className="font-medium hover:text-green-400" to='/login'>Login Now!</Link></p>
                             <input type="submit" value="Register" className="px-4 py-2 rounded-md opacity-80 bg-travego w-full md:w-96 text-white hover:bg-travego2 ease-in-out duration-300"/>

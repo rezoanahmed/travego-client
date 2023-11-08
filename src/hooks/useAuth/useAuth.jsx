@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { auth } from "../../firebase/firebase.config";
 import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const useAuth = () => {
     
@@ -59,7 +60,7 @@ const useAuth = () => {
         return ()=>{
             unsubscribe();
         }
-    },[])
+    },[user])
 
     const loginSystems = {
         googleLogin,
