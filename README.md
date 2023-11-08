@@ -10,3 +10,4 @@
 * Has modal in booking page
 * User can book and provide service at a same time
 * Different Service Manage and Bookings Manage pages in user dashboard
+* Fully secured api has been used. Another user can't access other's information
