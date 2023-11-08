@@ -20,6 +20,7 @@ const Login = () => {
             // console.log(err);
             if(err){
                 Swal.fire("", "Something went wrong!!!", "error")
+
             }
         })
     }
@@ -42,7 +43,13 @@ const Login = () => {
         .catch(err=>{
             // console.log(err);
             if(err){
-                Swal.fire("", "Something went wrong!!!", "error")
+                // Swal.fire("", "Something went wrong!!!", "error");
+                if (err.code == "auth/invalid-login-credentials") {
+                    Swal.fire("", "Email and Password Didn't Match", 'error')
+                } else{
+                    // console.log(err.code)
+                    Swal.fire("","Something went wrong", 'error');
+                }
             }
         })
     }
