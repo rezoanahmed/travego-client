@@ -27,7 +27,7 @@ const Services = () => {
             </div>
             <div className="flex justify-center mt-10">
                 
-            <Link to='/services' className="bg-travego text-white p-4 rounded-md hover:bg-travego2 duration-300">Show All Services</Link>
+            <Link to='/services' className="bg-travego dark:bg-blue-600 text-white p-4 rounded-md hover:bg-travego2 duration-300">Show All Services</Link>
             </div>
         </div>
     );

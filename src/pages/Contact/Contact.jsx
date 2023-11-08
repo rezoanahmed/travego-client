@@ -1,11 +1,11 @@
 const Contact = () => {
     return (
         <>
-        <div>
-            <section className="mt-8 p-4 rounded-lg shadow-md">
+        <div className="dark:bg-[#1f2937] dark:text-[#949ea9]">
+            <section className="pt-8 px-4 rounded-lg shadow-md">
             <h2 className="text-3xl font-bold mb-4 border-b pb-2 border-travego2">Contact Us</h2>
             <p className="mt-4 leading-relaxed">
-                At <span className="text-travego2">TraveGo</span>, we're always eager to assist you. Whether you're interested in our services or just have a general inquiry, don't hesitate to reach out.
+                At <span className="text-travego2 dark:text-blue-600">TraveGo</span>, we're always eager to assist you. Whether you're interested in our services or just have a general inquiry, don't hesitate to reach out.
             </p>
 
             <div className="mt-8">

@@ -13,10 +13,10 @@ const MySchedules = () => {
         })
     return (
         <>
-            <div>
-                <h1 className="mt-10 text-center text-4xl font-medium">You Have {schedules.length} Schedule(s)</h1>
+            <div className="dark:bg-[#1f2937] dark:text-[#949ea9]">
+                <h1 className="pt-10 text-center text-4xl font-medium">You Have {schedules.length} Schedule(s)</h1>
             </div>
-            <div className="p-4 md:p-20 flex flex-col gap-10">
+            <div className="dark:bg-[#1f2937] dark:text-[#949ea9] p-4 md:p-20 flex flex-col gap-10">
                 {
                     schedules.map(schedule => <MySchedule key={schedule._id} schedule={schedule}></MySchedule>)
                 }

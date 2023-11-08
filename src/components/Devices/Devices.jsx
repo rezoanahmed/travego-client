@@ -10,8 +10,8 @@ const Devices = () => {
                 <div>
                     <h1 className="text-4xl font-bold md:max-w-[650px]">Now You Can Get Us From Google Play Store & App Store</h1>
                     <div className="flex flex-col mt-10 gap-2">
-                        <button className='flex gap-2 justify-center items-center p-2 rounded-md bg-green-500'><BiLogoPlayStore></BiLogoPlayStore>Download From Google Play Store</button>
-                        <button className='flex gap-2 justify-center items-center p-2 rounded-md bg-blue-500'><PiAppStoreLogoBold></PiAppStoreLogoBold>Download From App Store</button>
+                        <button className='flex gap-2 justify-center items-center p-2 rounded-md bg-green-500 dark:bg-green-800'><BiLogoPlayStore></BiLogoPlayStore>Download From Google Play Store</button>
+                        <button className='flex gap-2 justify-center items-center p-2 rounded-md bg-blue-500 dark:bg-blue-800'><PiAppStoreLogoBold></PiAppStoreLogoBold>Download From App Store</button>
                     </div>
                 </div>
             </div>

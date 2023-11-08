@@ -32,7 +32,7 @@ const MyServices = ({ service }) => {
         });
     }
     return (
-        <div className="">
+        <div className="dark:bg-[#1f2937] dark:text-[#949ea9]">
             
             <div className="grid md:grid-cols-6 gap-2 items-center shadow-lg">
                 <div className="">
@@ -41,7 +41,7 @@ const MyServices = ({ service }) => {
                 <div className="md:col-span-5 space-y-2 p-4">
                     <div className="flex justify-between">
                         <p className="text-2xl font-bold">{name}</p>
-                        <p className="text-2xl font-medium text-travego2">${price}</p>
+                        <p className="text-2xl font-medium text-travego2 dark:text-blue-500">${price}</p>
                     </div>
                     <p className="text-lg">{location}</p>
                     <div className="flex gap-2">

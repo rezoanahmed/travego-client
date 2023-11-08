@@ -47,27 +47,27 @@ const ServiceDetails = () => {
     }
 
     return (
-        <div className="flex flex-col md:grid md:grid-cols-2 p-2 md:p-10 gap-5 items-center">
+        <div className="flex flex-col md:grid md:grid-cols-2 p-2 md:p-10 gap-5 items-center dark:bg-[#1f2937] dark:text-[#949ea9]">
             <div className="">
                 <img src={photo} alt={photo} className="rounded-md" />
             </div>
             <div className="space-y-2">
                 <p className="text-4xl font-bold">{name}</p>
-                <p className="text-3xl font-bold text-travego">${price}</p>
+                <p className="text-3xl font-bold text-travego dark:text-blue-500">${price}</p>
                 <p className="text-xl">{location}</p>
                 <hr />
                 <div className="flex items-center gap-2">
                     <img src={userPhoto} alt="avatar" className="h-8 w-8 rounded-full" />
-                    <p className="text-2xl font-medium text-gray-800">{username}</p>
+                    <p className="text-2xl font-medium text-gray-800 dark:text-[#949ea9]">{username}</p>
                 </div>
                 <hr />
-                <p className="text-gray-600">{description}</p>
+                <p className="text-gray-600 dark:text-[#949ea9]">{description}</p>
             </div>
-            <button onClick={showModal} className="col-span-2 bg-travego p-2 rounded-md text-white font-medium">Book Now</button>
+            <button onClick={showModal} className="col-span-2 bg-travego dark:bg-blue-600 p-2 rounded-md text-white font-medium">Book Now</button>
 
 
             {/* modal */}
-            <div id="modal" className="hidden z-100 p-20 bg-white dark:bg-black rounded-md shadow-2xl bg-opacity-95 -mt-[750px] md:-mt-[570px] md:mx-[400px] col-span-2">
+            <div id="modal" className="hidden dark:bg-[#1f2937] dark:text-[#949ea9] z-100 p-20 bg-white  rounded-md shadow-2xl bg-opacity-95 -mt-[750px] md:-mt-[570px] md:mx-[400px] col-span-2">
                 <form onSubmit={handleBooking} className="flex flex-col md:grid md:grid-cols-2 gap-5 max-w-[500px] mx-auto py-2">
                     <div className="flex flex-col">
                         <label className="text-xs text-gray-500 mb-1">Service</label>

@@ -16,7 +16,7 @@ const AllServices = () => {
     },[])
     // const fourServices = services.slice(0,4);
     return (
-        <div className="mt-10">
+        <div className="pt-10 dark:bg-[#1f2937] dark:text-[#949ea9]">
             {/* {services.length} */}
             <h1 className="font-medium text-center text-4xl">We're here to serve you with our exciting packages</h1>
             <div className="mt-10 grid grid-cols-1 gap-4">

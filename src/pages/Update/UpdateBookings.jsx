@@ -27,8 +27,8 @@ const UpdateBookings = () => {
     }
 
     return (
-        <div>
-            <div className="mt-10 z-100 p-5 bg-white dark:bg-black rounded-md shadow-2xl bg-opacity-95 md:mx-[400px] col-span-2">
+        <div className="dark:bg-[#1f2937] dark:text-[#949ea9]">
+            <div className="pt-10 z-100 p-5 bg-white dark:bg-[#1f2937] dark:text-[#949ea9] rounded-md shadow-2xl bg-opacity-95 md:mx-[400px] col-span-2">
                 <h1 className="text-center font-bold text-lg">Update Booking Information For {name}</h1>
                 <form onSubmit={handleUpdate} className="flex flex-col md:grid md:grid-cols-2 gap-5 max-w-[500px] mx-auto py-2">
                     <div className="flex flex-col">

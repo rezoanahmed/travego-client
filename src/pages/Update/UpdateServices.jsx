@@ -28,9 +28,9 @@ const UpdateServices = () => {
         })
     }
     return (
-        <div>
+        <div className="dark:bg-[#1f2937] dark:text-[#949ea9]">
             <div>
-                <div className="text-center mt-10 font-bold text-4xl">
+                <div className="text-center pt-10 font-bold text-4xl">
                     <h1>Update {name}</h1>
                 </div>
                 <div>

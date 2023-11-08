@@ -40,7 +40,7 @@ const MySchedule = ({schedule}) => {
                 <div className="md:col-span-4 space-y-2 p-4">
                     <div className="flex justify-between">
                         <p className="text-2xl font-bold">{name}</p>
-                        <p className="text-2xl font-medium text-travego2">{price}</p>
+                        <p className="text-2xl font-medium text-travego2 dark:text-blue-500">{price}</p>
                     </div>
                     <p className="text-lg">{location}</p>
                     <p className="text-lg">{date}</p>

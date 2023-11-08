@@ -82,12 +82,12 @@ const Navbar = () => {
                                                 <div className="flex items-center">
                                                     <img className="inline-block flex-shrink-0 h-[3rem] w-[3rem] rounded-full" src={user.photoURL} />
                                                     <div className="ml-3">
-                                                        <h3 className="font-semibold text-gray-800 dark:text-white">{user.displayName}</h3>
+                                                        <h3 className="font-semibold text-gray-800 dark:text-[#949ea9]">{user.displayName}</h3>
                                                         <p className="text-xs text-gray-400">{user.email}</p>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <FiLogOut onClick={handleLogout} className="text-2xl" title="Log Out"></FiLogOut>
+                                            <FiLogOut  onClick={handleLogout} className="text-2xl dark:text-[#949ea9]" title="Log Out"></FiLogOut>
 
                                         </div>
                                         :
