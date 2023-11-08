@@ -30,7 +30,7 @@ const Hero = () => {
                     <div className="flex flex-col md:flex-row">
                         <form>
                             <input type="text" placeholder="Search Services" className="p-2 text-black bg-white dark:bg-black dark:text-white bg-opacity-40" />
-                            <button className="bg-travego p-2">Search</button>
+                            <button className="bg-travego dark:bg-blue-600 p-2">Search</button>
                         </form>
                     </div>
                 </div>
