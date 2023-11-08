@@ -42,8 +42,8 @@ const Add = () => {
 
 
     return (
-        <div>
-            <div className="text-center mt-10 font-bold text-4xl">
+        <div className="dark:bg-[#1f2937] dark:text-[#949ea9]">
+            <div className="text-center pt-10 font-bold text-4xl">
                 <h1>Add The Service You Want To Provide</h1>
             </div>
             <div>
