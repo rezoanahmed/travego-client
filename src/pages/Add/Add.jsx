@@ -21,7 +21,7 @@ const Add = () => {
             email: user.email,
         };
         // console.log(service);
-        axios.post("http://localhost:3000/services", service)
+        axios.post("https://travego-server.vercel.app/services", service)
         .then(res=>{
             if(res.data.insertedId){
                 // console.log(user.displayName);

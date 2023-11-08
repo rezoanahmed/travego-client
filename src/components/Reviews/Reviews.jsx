@@ -5,7 +5,7 @@ import Review from "./Review";
 const Reviews = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        axios.get("http://localhost:3000/reviews")
+        axios.get("https://travego-server.vercel.app/reviews")
             .then(response => {
                 setReviews(response.data);
             })

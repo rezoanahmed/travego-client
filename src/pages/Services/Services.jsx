@@ -8,7 +8,7 @@ import { useEffect } from "react";
 const Services = () => {
     const [services, setServices] = useState([]);
     useEffect(()=>{
-        axios.get("http://localhost:3000/services")
+        axios.get("https://travego-server.vercel.app/services")
         .then(response=>{
             // setServices(response.data);
             // console.log(response.data);

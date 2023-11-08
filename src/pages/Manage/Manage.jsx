@@ -7,7 +7,7 @@ const Manage = () => {
     const {user} = useAuth();
     const [services, setServices] = useState([]);
     // console.log(user.email);
-    axios.get(`http://localhost:3000/myservices?email=${user.email}`,{withCredentials:true})
+    axios.get(`https://travego-server.vercel.app/myservices?email=${user.email}`,{withCredentials:true})
     .then(res=>{
         setServices(res.data)
     })

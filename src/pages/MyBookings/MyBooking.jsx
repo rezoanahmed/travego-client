@@ -18,7 +18,7 @@ const MyBooking = ({ booking }) => {
             confirmButtonText: "Yes, Confirm"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:3000/bookings/${id}`, id)
+                axios.delete(`https://travego-server.vercel.app/bookings/${id}`, id)
                     .then(res => {
                         if (res.data.deletedCount) {
                             Swal.fire({

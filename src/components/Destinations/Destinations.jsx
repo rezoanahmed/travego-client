@@ -6,7 +6,7 @@ import Destination from "./Destination";
 const Destinations = () => {
     const [destinations, setDestinations] = useState([]);
     useEffect(()=>{
-        axios.get("http://localhost:3000/destinations")
+        axios.get("https://travego-server.vercel.app/destinations")
         .then(data=>setDestinations(data.data))
     },[])
     return (

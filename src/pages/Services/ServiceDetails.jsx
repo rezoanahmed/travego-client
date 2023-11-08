@@ -34,7 +34,7 @@ const ServiceDetails = () => {
 
         const bookingDetails = {name, price, hostName, hostEmail, location, photo, date, usermail, instructions, userPhoto: user.photoURL, status};
         // console.log(bookingDetails);
-        axios.post("http://localhost:3000/bookings", bookingDetails)
+        axios.post("https://travego-server.vercel.app/bookings", bookingDetails)
         .then(res=>{
             // console.log(res.data);
             if(res.data.insertedId){

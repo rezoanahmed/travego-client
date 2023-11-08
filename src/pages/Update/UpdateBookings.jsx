@@ -16,7 +16,7 @@ const UpdateBookings = () => {
             date, instructions
         }
         // console.log(updateRequest);
-        axios.patch(`http://localhost:3000/booking/${_id}`, updateRequest)
+        axios.patch(`https://travego-server.vercel.app/booking/${_id}`, updateRequest)
         .then(res=>{
             // console.log(res.data);
             if(res.data.modifiedCount){

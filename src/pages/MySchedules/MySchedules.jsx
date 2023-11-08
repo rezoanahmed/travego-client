@@ -7,7 +7,7 @@ import MySchedule from "./MySchedule";
 const MySchedules = () => {
     const { user } = useAuth();
     const [schedules, setSchedules] = useState([]);
-    axios.get(`http://localhost:3000/schedules?hostEmail=${user.email}`, {withCredentials:true})
+    axios.get(`https://travego-server.vercel.app/schedules?hostEmail=${user.email}`, {withCredentials:true})
         .then(response => {
             setSchedules(response.data);
         })

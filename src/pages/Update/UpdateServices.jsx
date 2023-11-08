@@ -18,7 +18,7 @@ const UpdateServices = () => {
             name, price, photo, location, description
         };
         // console.log(service);
-        axios.patch(`http://localhost:3000/service/${_id}`, service)
+        axios.patch(`https://travego-server.vercel.app/service/${_id}`, service)
         .then(res=>{
             console.log(res.data);
             if(res.data.modifiedCount){

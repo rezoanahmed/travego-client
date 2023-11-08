@@ -38,7 +38,7 @@ export const router = createBrowserRouter([
             {
                 path: "/service/:id",
                 element: <PrivateRoutes><ServiceDetails></ServiceDetails></PrivateRoutes>,
-                loader: ({params})=>fetch(`http://localhost:3000/service/${params.id}`)
+                loader: ({params})=>fetch(`https://travego-server.vercel.app/service/${params.id}`)
             },
             {
                 path: "/add",
@@ -59,12 +59,12 @@ export const router = createBrowserRouter([
             {
                 path: "/updateservice/:id",
                 element: <PrivateRoutes><UpdateServices></UpdateServices></PrivateRoutes>,
-                loader: ({params})=>fetch(`http://localhost:3000/service/${params.id}`)
+                loader: ({params})=>fetch(`https://travego-server.vercel.app/service/${params.id}`)
             },
             {
                 path: "/updatebooking/:id",
                 element: <PrivateRoutes><UpdateBookings></UpdateBookings></PrivateRoutes>,
-                loader: ({params})=>fetch(`http://localhost:3000/booking/${params.id}`)
+                loader: ({params})=>fetch(`https://travego-server.vercel.app/booking/${params.id}`)
                 
             }
         ],

@@ -10,7 +10,7 @@ const MySchedule = ({schedule}) => {
 
     const handleConfirm = () =>{
         const status = "Confirmed";
-        axios.patch(`http://localhost:3000/schedules/${_id}`, {status})
+        axios.patch(`https://travego-server.vercel.app/schedules/${_id}`, {status})
         .then(response=>{
             console.log(response.data);
             Swal.fire("","Schedule Has Been Confirmed", "success")
@@ -21,7 +21,7 @@ const MySchedule = ({schedule}) => {
 
     const handleCancel = () =>{
         const status = "Cancelled";
-        axios.patch(`http://localhost:3000/schedules/${_id}`, {status})
+        axios.patch(`https://travego-server.vercel.app/schedules/${_id}`, {status})
         .then(response=>{
             console.log(response.data);
             Swal.fire("","Schedule Has Been Cancelled", "error")
