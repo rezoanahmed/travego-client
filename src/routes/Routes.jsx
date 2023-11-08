@@ -13,6 +13,8 @@ import MyBookings from "../pages/MyBookings/MyBookings";
 import MySchedules from "../pages/MySchedules/MySchedules";
 import UpdateServices from "../pages/Update/UpdateServices";
 import UpdateBookings from "../pages/Update/UpdateBookings";
+import About from "../pages/About/About";
+import Contact from "../pages/Contact/Contact";
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -66,6 +68,14 @@ export const router = createBrowserRouter([
                 element: <PrivateRoutes><UpdateBookings></UpdateBookings></PrivateRoutes>,
                 loader: ({params})=>fetch(`https://travego-server.vercel.app/booking/${params.id}`)
                 
+            },
+            {
+                path: "/about",
+                element: <About></About>
+            },
+            {
+                path: "/contact",
+                element: <Contact></Contact>
             }
         ],
         
