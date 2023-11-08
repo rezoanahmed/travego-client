@@ -7,7 +7,7 @@ import MyBooking from "./MyBooking";
 const MyBookings = () => {
     const {user} = useAuth();
     const [bookings, setBookings] = useState([]);
-        axios.get(`http://localhost:3000/bookings?usermail=${user.email}`)
+        axios.get(`http://localhost:3000/bookings?usermail=${user.email}`, {withCredentials:true})
         .then(res=>{
             // console.log(res.data);
             setBookings(res.data);
