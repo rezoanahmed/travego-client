@@ -14,10 +14,10 @@ const Error = () => {
                 <div>
                 </div>
             </div> */}
-            <div className="flex flex-col justify-center items-center">
+            <div className="flex flex-col justify-center items-center dark:bg-[#1f2937] dark:text-[#949ea9]">
             {/* <h1 className="text-travego font-bold text-6xl pt-10">404 Error</h1> */}
             <Lottie className="h-96" animationData={ErrorAnimation} loop={true}></Lottie>
-            <Link to='/' className="bg-travego hover:bg-opacity-80 p-2 rounded-md text-white">Go Back To Homepage</Link>
+            <Link to='/' className="bg-travego dark:bg-blue-600 hover:bg-opacity-80 p-2 rounded-md text-white">Go Back To Homepage</Link>
             </div>
             <Footer></Footer>
         </>
