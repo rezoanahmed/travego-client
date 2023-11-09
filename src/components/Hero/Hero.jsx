@@ -14,7 +14,7 @@ const Hero = () => {
         // console.log(searchValue.length);
         // if(searchValue.length)
         setSearchLength(searchValue.length);
-        console.log(searchLength);
+        // console.log(searchLength);
         
         
         // console.log(searchValue);

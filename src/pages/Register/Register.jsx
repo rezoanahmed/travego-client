@@ -16,6 +16,7 @@ const Register = () => {
             // console.log(userCredentials);
             if(userCredentials){
                 Swal.fire("", "Login Succeeded!!!", "success")
+                navigate("/");
             }
         })
         .catch(err=>{

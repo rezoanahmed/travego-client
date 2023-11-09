@@ -1,20 +1,20 @@
 import {FcGoogle} from "react-icons/fc"
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth/useAuth";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
 
 const Login = () => {
     const {googleLogin, login} = useAuth();
+    const location = useLocation();
     const navigate = useNavigate();
     const handleGoogleLogin = () =>{
         googleLogin()
         .then(userCredentials=>{
             console.log(userCredentials);
             if(userCredentials){
-                
+                navigate(location?.state?location.state:'/')
                 Swal.fire("", "Login Succeeded!!!", "success");
-                navigate("/");
             }
         })
         .catch(err=>{
@@ -37,8 +37,8 @@ const Login = () => {
             // console.log(userCredentials);
             if(userCredentials){
                 form.reset();
+                navigate(location?.state?location.state:'/')
                 Swal.fire("", "Login Succeeded!!!", "success");
-                navigate("/")
             }
         })
         .catch(err=>{
