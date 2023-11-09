@@ -8,9 +8,16 @@ import SearchResults from "./SearchResults";
 const Hero = () => {
     const [searchItem, setSearchItem] = useState([]);
     const [finalResult, setFinalResult] = useState([]);
+    const [searchLength, setSearchLength] = useState(0);
     const search = (e) =>{
         const searchValue = e.target.value;
-        console.log(searchValue);
+        // console.log(searchValue.length);
+        // if(searchValue.length)
+        setSearchLength(searchValue.length);
+        console.log(searchLength);
+        
+        
+        // console.log(searchValue);
         axios.get("https://travego-server.vercel.app/services")
         .then(response=>{
             // setServices(response.data);
@@ -18,7 +25,7 @@ const Hero = () => {
             setSearchItem(response.data)
         })
         const result = searchItem.filter(item=>{
-            console.log(searchValue.toLowerCase());
+            // console.log(searchValue.toLowerCase());
             const searchResult = (item.name.toLowerCase().includes(searchValue));
             return searchResult;
             
@@ -58,19 +65,18 @@ const Hero = () => {
                     </div>
                     {/* <Link to='/login' className="bg-travego dark:dark:bg-[#1f2937] dark:text-[#949ea9] py-1 px-2 rounded-md hover:bg-travego2 duration-300 ease-in-out">Book Your Journey Now</Link> */}
                     <div className="flex flex-col md:flex-row">
-                        <form>
                             <input onChange={search} name="search" type="text" placeholder="Search Services" className="p-2  bg-black text-white bg-opacity-70" />
-                            <button className="bg-travego dark:bg-blue-600 p-2">Search</button>
-                        </form>
                     </div>
                 </div>
             </div>
         </div>
-        <div className=" flex flex-col justify-center items-center">
+            <div className={`flex flex-col justify-center items-center
+            ${searchLength>1?"":"hidden"}
+            `}>
             {
                 finalResult.map(element=><SearchResults key={element._id} res={element}></SearchResults>)
             }
-        </div>
+            </div>
     </>
     );
 };
