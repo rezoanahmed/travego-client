@@ -2,6 +2,7 @@ import { useLoaderData, useNavigate } from "react-router-dom"
 import useAuth from "../../hooks/useAuth/useAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const ServiceDetails = () => {
     const { user } = useAuth();
@@ -48,6 +49,9 @@ const ServiceDetails = () => {
 
     return (
         <div className="flex flex-col md:grid md:grid-cols-2 p-2 md:p-10 gap-5 items-center dark:bg-[#1f2937] dark:text-[#949ea9]">
+            <Helmet>
+                <title>Travego | Servce Details</title>
+            </Helmet>
             <div className="">
                 <img src={photo} alt={photo} className="rounded-md" />
             </div>

@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import AllService from "./AllService";
+import { Helmet } from "react-helmet-async";
 
 
 const AllServices = () => {
@@ -17,6 +18,9 @@ const AllServices = () => {
     // const fourServices = services.slice(0,4);
     return (
         <div className="pt-10 dark:bg-[#1f2937] dark:text-[#949ea9]">
+            <Helmet>
+                <title>Travego | Services</title>
+            </Helmet>
             {/* {services.length} */}
             <h1 className="font-medium text-center text-4xl">We're here to serve you with our exciting packages</h1>
             <div className="mt-10 grid grid-cols-1 gap-4">

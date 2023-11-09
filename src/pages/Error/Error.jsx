@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
 // import Lottie from "lottie-react";
 import ErrorAnimation from '../../Lottie/ErrorAnimation.json'
+import { Helmet } from "react-helmet-async";
 
 const Error = () => {
     return (
@@ -14,6 +15,9 @@ const Error = () => {
                 <div>
                 </div>
             </div> */}
+            <Helmet>
+                <title>404 Error</title>
+            </Helmet>
             <div className="flex flex-col justify-center items-center dark:bg-[#1f2937] dark:text-[#949ea9]">
             {/* <h1 className="text-travego font-bold text-6xl pt-10">404 Error</h1> */}
             <Lottie className="h-96" animationData={ErrorAnimation} loop={true}></Lottie>

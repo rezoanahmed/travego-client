@@ -4,12 +4,15 @@ import App from './App.jsx'
 import './index.css'
 import { RouterProvider } from 'react-router-dom'
 import { router } from './routes/Routes.jsx'
-import ('preline')
+import { HelmetProvider } from 'react-helmet-async'
+import('preline')
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}>
-    <App />
-    </RouterProvider>
+    <HelmetProvider>
+      <RouterProvider router={router}>
+        <App />
+      </RouterProvider>
+    </HelmetProvider>
   </React.StrictMode>,
 )

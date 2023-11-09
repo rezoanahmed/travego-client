@@ -2,6 +2,7 @@ import axios from "axios"
 import Swal from "sweetalert2";
 import useAuth from "../../hooks/useAuth/useAuth";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 const Add = () => {
 
 
@@ -43,6 +44,9 @@ const Add = () => {
 
     return (
         <div className="dark:bg-[#1f2937] dark:text-[#949ea9]">
+            <Helmet>
+                <title>Travego | Add Services</title>
+            </Helmet>
             <div className="text-center pt-10 font-bold text-4xl">
                 <h1>Add The Service You Want To Provide</h1>
             </div>

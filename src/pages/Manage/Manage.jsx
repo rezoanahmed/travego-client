@@ -2,6 +2,7 @@ import { useState } from 'react';
 import useAuth from '../../hooks/useAuth/useAuth';
 import axios from "axios"
 import MyServices from './MyServices';
+import { Helmet } from 'react-helmet-async';
 
 const Manage = () => {
     const {user} = useAuth();
@@ -14,6 +15,9 @@ const Manage = () => {
     
     return (
         <div className='dark:bg-[#1f2937] dark:text-[#949ea9]'>
+            <Helmet>
+                <title>Travego | Manage Services</title>
+            </Helmet>
             <div>
                 <h1 className="pt-10 text-center text-4xl font-medium">You Have {services.length} Service(s)</h1>
             </div>

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Destinations from "../../components/Destinations/Destinations";
 import Devices from "../../components/Devices/Devices";
 import Faq from "../../components/Faq/Faq";
@@ -11,6 +12,9 @@ import Services from "../Services/Services";
 const Home = () => {
     return (
         <div className="dark:bg-[#1f2937] dark:text-[#949ea9]">
+            <Helmet>
+                <title>Travego | Home</title>
+            </Helmet>
             <Hero></Hero>
             <div className="p-4 md:p-8 mx-auto">
                 <Services></Services>

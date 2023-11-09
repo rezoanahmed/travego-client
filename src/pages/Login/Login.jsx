@@ -2,6 +2,7 @@ import {FcGoogle} from "react-icons/fc"
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth/useAuth";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
     const {googleLogin, login} = useAuth();
@@ -55,6 +56,9 @@ const Login = () => {
     }
     return (
         <div className="bg-[url('https://images.pexels.com/photos/761511/pexels-photo-761511.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] h-screen bg-cover">
+            <Helmet>
+                <title>Travego | Login</title>
+            </Helmet>
             <div className="bg-black bg-opacity-70 h-screen">
                 <div className="max-w-[1200px] mx-auto flex justify-center items-center h-screen">
                     <div className="max-w-[600px]">

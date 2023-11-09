@@ -1,6 +1,11 @@
+import { Helmet } from "react-helmet-async";
+
 const Contact = () => {
     return (
         <>
+        <Helmet>
+            <title>Travego | Contact</title>
+        </Helmet>
         <div className="dark:bg-[#1f2937] dark:text-[#949ea9]">
             <section className="pt-8 px-4 rounded-lg shadow-md">
             <h2 className="text-3xl font-bold mb-4 border-b pb-2 border-travego2">Contact Us</h2>
