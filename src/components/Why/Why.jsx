@@ -1,4 +1,5 @@
 
+import CountUp from "react-countup";
 import {BsTicketPerforatedFill,BsFillLightbulbFill, BsFillCalendarFill, BsFillStarFill} from "react-icons/bs"
 const Why = () => {
     return (
@@ -12,7 +13,7 @@ const Why = () => {
                 </div>
                 <div className="flex justify-center items-center flex-col gap-2">
                     <BsFillLightbulbFill className="text-6xl text-travego dark:text-blue-600"></BsFillLightbulbFill>
-                    <h1 className="font-medium text-2xl">300,000+ experiences</h1>
+                    <h1 className="font-medium text-2xl"><CountUp end={300000} duration={10}></CountUp>+ experiences</h1>
                     <p className="text-sm">Make memories around the world.</p>
                 </div>
                 <div className="flex justify-center items-center flex-col gap-2">
@@ -23,7 +24,7 @@ const Why = () => {
                 <div className="flex justify-center items-center flex-col gap-2">
                     <BsFillStarFill className="text-6xl text-travego dark:text-blue-600"></BsFillStarFill>
                     <h1 className="font-medium text-2xl">Trusted reviews</h1>
-                    <p className="text-sm">4.5 stars from 140,000+ Trustpilot reviews.</p>
+                    <p className="text-sm">4.5 stars from <CountUp end={140000} duration={10}></CountUp>+ Trustpilot reviews.</p>
                 </div>
             </div>
         </div>
