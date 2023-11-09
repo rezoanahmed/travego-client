@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 const SearchResults = ({ res }) => {
     const { name, photo,description,price,_id } = res;
     return (
-        <div className="shadow-xl p-2 flex flex-row-reverse gap-2">
+        <div className="shadow-xl p-4 flex flex-col-reverse md:flex-row-reverse gap-2">
             <div className="max-w-xl flex justify-between items-center">
                 <div>
                 <p className="text-2xl font-bold">{name}</p>
